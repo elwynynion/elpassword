@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=0" />
+    <!-- Primary Meta Tags -->
+    <title>ElPass - Secure your password in just one tap</title>
+    <meta name="title" content="    Use ElPassword to generate a new random password for your social media, email, or other accounts. The password is generated with 20+ characters with numbers, letters and special symbols that are hard to crack.">
+    <meta name="description" content="Use ElPassword to generate a new random password for your social media, email, or other accounts. The password is generated with 20+ characters with numbers, letters and special symbols that are hard to crack.">
+        
+    <link rel="icon" href="/assets/img/logo.png" type="image/png" />
+    <link rel="shortcut icon" href="favicon.ico" sizes="16x16"/>
+    <link rel="shortcut icon" href="favicon.ico" sizes="32x32"/>
+    <link rel="shortcut icon" href="favicon.ico" sizes="48x48"/>
+    
+    <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://elpassword.netlify.app/">
+  <meta property="og:title" content="ElPass - Secure your password in just one tap">
+  <meta property="og:description" content="Use ElPassword to generate a new random password for your social media, email, or other accounts. The password is generated with 20+ characters with numbers, letters and special symbols that are hard to crack.">
+  <meta property="og:image" content="/assets/img/cover.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/global/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+
+    <script src="/assets/jquery.min.js"></script>
+</head>
+<body>
+<!-- <h1 class="space-g"><img src="/assets/img/logo.png" class="logo-au" alt="">ElPassword</h1> -->
+<center><img src="/assets/img/logobanner.png" class="lgbg" alt=""></center>
+<p>
+    Use ElPassword to generate a new random password for your social media, email, or other accounts. The password is generated with 20+ characters with numbers, letters and special symbols that are hard to crack.
+</p>
+<h2>Your new password</h2>
+<input type="text" id="clipboard-areas" readonly><hr>
+<button onClick="window.location.reload();">🔄 Reset Password</button>
+<button id="clip" onclick="myFunction()">✂️ Copy Password</button>
+<footer>
+    <small>Made with 💖 by <a href="">elwyn</a> inspired by <a href="https://create-a-jazzword.glitch.me/">Jazz</a> | <a href="">Privacy</a></small>
+</footer>
+<script>
+function ElPass() {
+    var length = 22,
+        charset = "!@#$%^&*()_+\+ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+        // charset = "!@#$%^&*()_+\+abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+        retVal = "";
+    for (var i = 0, n = charset.length; i < length; ++i) {
+        retVal += charset.charAt(Math.floor(Math.random() * n));
+    }
+    return retVal;
+}
+
+document.getElementById("clipboard-areas").value = ElPass();
+
+function myFunction() {
+  /* Get the text field */
+  var copyText = document.getElementById("clipboard-areas");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+   /* Copy the text inside the text field */
+  navigator.clipboard.writeText(copyText.value);
+
+  /* Alert the copied text */
+  alert("✅ Password Copied");
+}
+
+function copyTextFromElement() {
+  let element = document.getElementById("clipboard-area"); //select the element
+  textContent = generatePassword();
+  let elementText = element.textContent; //get the text content from the element
+  copyText(elementText); //use the copyText function below
+  alert("✅ Passwort in die Zwischenablage kopiert.");
+}
+
+function copyText(text) {
+  navigator.clipboard.writeText(text.trim());
+  
+}
+</script>
+</body>
+</html>
