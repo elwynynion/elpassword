@@ -1,0 +1,20 @@
+body {
+  font-family: "Space Grotesk", sans-serif !important;
+}
+
+.logo-au {
+  width: 1em;
+  height: auto;
+  vertical-align: middle;
+}
+
+.lgbg {
+  width: 15em;
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: optimizeQuality;
+  image-rendering: -moz-crisp-edges;
+  pointer-events: none;
+}
+
+/*# sourceMappingURL=main.css.map */

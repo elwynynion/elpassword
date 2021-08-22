@@ -1,0 +1,23 @@
+// Color pallete 
+
+// Fonts
+$spacegrotesk: 'Space Grotesk', sans-serif;
+
+body {
+    font-family: $spacegrotesk !important;
+}
+
+.logo-au {
+    width: 1em;
+    height: auto;
+    vertical-align: middle;
+}
+
+.lgbg {
+    width: 15em;
+    image-rendering: auto;
+    image-rendering: crisp-edges;
+    image-rendering: optimizeQuality;
+    image-rendering: -moz-crisp-edges;
+    pointer-events: none;
+}
